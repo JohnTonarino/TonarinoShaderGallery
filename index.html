@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raymarch Gallery</title>
+<link rel="stylesheet" href="assets/style.css">
+<body>
+<header class="site-header">
+  <h1>Atelier Tonarino Shader Gallery</h1>
+  <p class="muted">となりの (@JohnTonarinoGC) が描いたシェーダーのギャラリー。</p>
+  <nav class="filters" id="filters"></nav>
+</header>
+<main class="wrap">
+  <section id="gallery" class="grid"></section>
+</main>
+<footer class="site-footer">
+  <div>© <span id="year"></span> Atelier Tonarino</div>
+  <div class="muted">This site hosts rendered outputs only. No shader sources are published.</div>
+</footer>
+<div id="lightbox" class="lightbox" hidden>
+  <button class="lb-close" title="閉じる (Esc)">×</button>
+  <div class="lb-stage" id="lb-stage"></div>
+  <div class="lb-caption" id="lb-caption"></div>
+</div>
+<script defer src="assets/gallery.js"></script>
+</body>
+</html>
