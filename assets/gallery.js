@@ -55,12 +55,70 @@ const vid=lbStage.querySelector('video');
       const dateElement = it.date ? `<time class="card-date" datetime="${it.date}">${it.date}</time>` : '';
       const tagBadges = (it.tags || []).map(tag => `<span class="badge">${tag}</span>`).join('');
       if (it.type === 'video') {
-        const card = el(`<article class="card"><button class="thumb-btn" aria-label="open"><img class="thumb" alt="${it.title}" loading="lazy" src="${it.thumbnail}"></button><div class="meta"><h3>${it.title}</h3>${dateElement}<div class="badges"><span class="badge type-video">Video</span>${tagBadges}</div></div></article>`);
-        card.querySelector('.thumb-btn').onclick = () => openLightbox(videoNode(it));
+        const previewVideoHTML = `<video
+            class="thumb thumb-preview"
+            src="${it.sources[0].src}"
+            preload="none" 
+            muted 
+            loop 
+            playsinline
+            hidden 
+          ></video>`;
+
+        const card = el(`<article class="card">
+          <button class="thumb-btn" aria-label="open">
+            <img class="thumb thumb-poster" alt="${it.title}" loading="lazy" src="${it.thumbnail}">
+            ${previewVideoHTML}
+          </button>
+          <div class="meta">
+            <h3>${it.title}</h3>
+            ${dateElement}
+            <div class="badges"><span class="badge type-video">video</span>${tagBadges}</div>
+          </div>
+        </article>`);
+
+        const btn = card.querySelector('.thumb-btn');
+        const poster = card.querySelector('.thumb-poster');
+        const preview = card.querySelector('.thumb-preview');
+        
+        btn.addEventListener('mouseenter', () => {
+          poster.hidden = true;
+          preview.hidden = false;
+          preview.play();
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+          poster.hidden = false;
+          preview.hidden = true;
+          preview.pause();
+          preview.currentTime = 0;
+          btn.style.transform = '';
+          btn.style.zIndex = '';
+        });
+
+        btn.onclick = () => {
+          poster.hidden = false;
+          preview.hidden = true;
+          preview.pause();
+          btn.style.transform = 'none'; 
+          btn.style.zIndex = '0';
+          openLightbox(videoNode(it));
+        }
         grid.appendChild(card);
       } else if (it.type === 'image') {
         const card = el(`<article class="card"><button class="thumb-btn" aria-label="open"><img class="thumb" alt="${it.title}" loading="lazy" src="${it.thumbnail}"></button><div class="meta"><h3>${it.title}</h3>${dateElement}<div class="badges"><span class="badge type-image">Image</span>${tagBadges}</div></div></article>`);
-        card.querySelector('.thumb-btn').onclick = () => openLightbox(imageNode(it));
+        const btn = card.querySelector('.thumb-btn');
+
+        btn.addEventListener('mouseleave', () => {
+          btn.style.transform = '';
+          btn.style.zIndex = '';
+        });
+
+        btn.onclick = () => {
+          btn.style.transform = 'none'; 
+          btn.style.zIndex = '0';
+          openLightbox(imageNode(it));
+        };
         grid.appendChild(card);
       }
     }
