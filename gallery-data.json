@@ -26,7 +26,7 @@
     "title":"SpaceJellyfish",
     "theme":"宇宙クラゲ",
     "date": "2025-09-21",
-    "tags":["GLSL", "Raymarching"],
+    "tags":["GLSL", "Raymarching","Jellyfish"],
     "thumbnail":"themes/SpaceJellyfish/thumbnail/SpaceJellyfishThumbnail.png",
     "sources":[
       {"src":"themes/SpaceJellyfish/video/SpaceJellyfish.mp4", "type":"video/mp4"}
@@ -37,7 +37,7 @@
     "title":"FloatingGoldfish",
     "theme":"たゆたう金魚",
     "date": "2025-08-31",
-    "tags":["GLSL", "Raymarching"],
+    "tags":["GLSL", "Raymarching", "Goldfish"],
     "thumbnail":"themes/FloatingGoldfish/thumbnail/FloatingGoldfishThumbnail.png",
     "sources":[
       {"src":"themes/FloatingGoldfish/video/FloatingGoldfish.mp4", "type":"video/mp4"}
@@ -48,7 +48,7 @@
     "title":"MorphingPonde",
     "theme":"モーフィング・ポンデ",
     "date": "2025-08-18",
-    "tags":["GLSL", "Raymarching"],
+    "tags":["GLSL", "Raymarching","Ponde"],
     "thumbnail":"themes/MorphingPonde/thumbnail/MorphingPondeThumbnail.png",
     "sources":[
       {"src":"themes/MorphingPonde/video/MorphingPonde.mp4", "type":"video/mp4"}
@@ -74,6 +74,50 @@
     "thumbnail":"themes/FuwaFuwaHalloweenGhost/thumbnail/FuwaFuwaHalloweenGhostThumbnail.png",
     "sources":[
       {"src":"themes/FuwaFuwaHalloweenGhost/video/FuwaFuwaHalloweenGhost.mp4", "type":"video/mp4"}
+    ]
+  },
+  {
+    "type":"image",
+    "title":"SquareCarpet",
+    "theme":"四角絨毯",
+    "date": "2023-06-08",
+    "tags":["GLSL", "Square"],
+    "thumbnail":"themes/SquareCarpet/SquareCarpet.png",
+    "sources":[
+      {"src":"themes/SquareCarpet/SquareCarpet.png", "type":"image/png"}
+    ]
+  },
+  {
+    "type":"video",
+    "title":"JumpingSquares",
+    "theme":"ジャンピング正方形",
+    "date": "2023-05-04",
+    "tags":["GLSL", "Square"],
+    "thumbnail":"themes/JumpingSquares/thumbnail/JumpingSquaresThumbnail.png",
+    "sources":[
+      {"src":"themes/JumpingSquares/video/JumpingSquares.mp4", "type":"video/mp4"}
+    ]
+  },
+  {
+    "type":"video",
+    "title":"RaibowCircle",
+    "theme":"レインボー円",
+    "date": "2022-04-14",
+    "tags":["GLSL", "Circle"],
+    "thumbnail":"themes/RainbowCircle/thumbnail/RainbowCircleThumbnail.png",
+    "sources":[
+      {"src":"themes/RainbowCircle/video/RainbowCircle.mp4", "type":"video/mp4"}
+    ]
+  },
+  {
+    "type":"video",
+    "title":"RainbowCogwheel",
+    "theme":"レインボー歯車",
+    "date": "2022-11-24",
+    "tags":["GLSL", "Cogwheel"],
+    "thumbnail":"themes/RainbowCogwheel/thumbnail/RainbowCogwheelThumbnail.png",
+    "sources":[
+      {"src":"themes/RainbowCogwheel/video/RainbowCogwheel.mp4", "type":"video/mp4"}
     ]
   }
 ]
