@@ -39,7 +39,9 @@ const vid=lbStage.querySelector('video');
 
   const filtersEl = document.getElementById('filters');
   const grid = document.getElementById('gallery');
-  const allTags = [...new Set(GALLERY_DATA.flatMap(item => item.tags || []))];
+  const allTags = [...new Set(GALLERY_DATA.flatMap(item => 
+    (item.tags || []).concat(item.type.charAt(0).toUpperCase() + item.type.slice(1))
+  ))];
   allTags.sort();
   const filterBtns = [{ label: 'All', value: '__all' }].concat(allTags.map(t => ({ label: t, value: t })));
   let activeFilter = '__all';
@@ -47,9 +49,15 @@ const vid=lbStage.querySelector('video');
   // Render関数
   function render() {
     grid.innerHTML = '';
-    const items = GALLERY_DATA.filter(it =>
-      activeFilter === '__all' || (it.tags && it.tags.includes(activeFilter))
-    );
+    const items = GALLERY_DATA.filter(it => {
+      if (activeFilter === '__all') return true;
+      // 1. type (Video/Image)
+      const itemTypeTag = it.type.charAt(0).toUpperCase() + it.type.slice(1);
+      if (itemTypeTag === activeFilter) return true;
+      // 2. tags
+      if (it.tags && it.tags.includes(activeFilter)) return true;
+      return false;
+    });
 
     for (const it of items) {
       const dateElement = it.date ? `<time class="card-date" datetime="${it.date}">${it.date}</time>` : '';
@@ -73,7 +81,7 @@ const vid=lbStage.querySelector('video');
           <div class="meta">
             <h3>${it.title}</h3>
             ${dateElement}
-            <div class="badges"><span class="badge type-video">video</span>${tagBadges}</div>
+            <div class="badges"><span class="badge type-video">Video</span>${tagBadges}</div>
           </div>
         </article>`);
 
@@ -106,7 +114,15 @@ const vid=lbStage.querySelector('video');
         }
         grid.appendChild(card);
       } else if (it.type === 'image') {
-        const card = el(`<article class="card"><button class="thumb-btn" aria-label="open"><img class="thumb" alt="${it.title}" loading="lazy" src="${it.thumbnail}"></button><div class="meta"><h3>${it.title}</h3>${dateElement}<div class="badges"><span class="badge type-image">Image</span>${tagBadges}</div></div></article>`);
+        const card = el(`<article class="card">
+          <button class="thumb-btn" aria-label="open">
+            <img class="thumb" alt="${it.title}" loading="lazy" src="${it.thumbnail}">
+          </button><div class="meta">
+            <h3>${it.title}</h3>
+            ${dateElement}
+            <div class="badges"><span class="badge type-image">Image</span>${tagBadges}</div>
+          </div>
+        </article>`);
         const btn = card.querySelector('.thumb-btn');
 
         btn.addEventListener('mouseleave', () => {
