@@ -119,5 +119,16 @@
     "sources":[
       {"src":"themes/RainbowCogwheel/video/RainbowCogwheel.mp4", "type":"video/mp4"}
     ]
+  },
+  {
+    "type":"video",
+    "title":"MarchingKadomatsu",
+    "theme":"マーチング門松",
+    "date": "2025-12-30",
+    "tags":["GLSL", "Raymarching", "Kadomatsu"],
+    "thumbnail":"themes/MarchingKadomatsu/thumbnail/MarchingKadomatsu.png",
+    "sources":[
+      {"src":"themes/MarchingKadomatsu/video/MarchingKadomatsu.mp4", "type":"video/mp4"}
+    ]
   }
 ]
