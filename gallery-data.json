@@ -130,5 +130,16 @@
     "sources":[
       {"src":"themes/MarchingKadomatsu/video/MarchingKadomatsu.mp4", "type":"video/mp4"}
     ]
+  },
+  {
+    "type":"video",
+    "title":"JetEngine",
+    "theme":"JetEngine",
+    "date": "2026-08-23",
+    "tags":["GLSL", "JetEngine"],
+    "thumbnail":"themes/JetEngine/thumbnail/JetEngine.png",
+    "sources":[
+      {"src":"themes/JetEngine/video/JetEngine.mp4", "type":"video/mp4"}
+    ]
   }
 ]
