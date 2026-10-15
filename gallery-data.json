@@ -130,5 +130,27 @@
     "sources":[
       {"src":"themes/MarchingKadomatsu/video/MarchingKadomatsu.mp4", "type":"video/mp4"}
     ]
+  },
+  {
+    "type":"video",
+    "title":"JetEngine",
+    "theme":"JetEngine",
+    "date": "2026-08-23",
+    "tags":["GLSL", "JetEngine"],
+    "thumbnail":"themes/JetEngine/thumbnail/JetEngine.png",
+    "sources":[
+      {"src":"themes/JetEngine/video/JetEngine.mp4", "type":"video/mp4"}
+    ]
+  },
+  {
+    "type":"video",
+    "title":"SymbolSoda",
+    "theme":"キゴー・ソーダ",
+    "date": "2024-12-07",
+    "tags":["Unity", "Symbol", "Soda", "Vket24W"],
+    "thumbnail":"themes/SymbolSoda/thumbnail/SymbolSoda.png",
+    "sources":[
+      {"src":"themes/SymbolSoda/video/SymbolSoda.mp4", "type":"video/mp4"}
+    ]
   }
 ]
